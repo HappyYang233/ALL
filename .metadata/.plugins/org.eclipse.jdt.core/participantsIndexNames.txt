@@ -1,0 +1,23 @@
+INDEX VERSION 1.131
+C:\Users\yzy\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2242228779.index
+\music\src
+C:\Users\yzy\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2479662732.index
+\work2\src
+C:\Users\yzy\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3454934577.index
+\work2\src
+C:\Users\yzy\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4103491542.index
+\work2\src
+C:\Users\yzy\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3358981358.index
+\music\src
+C:\Users\yzy\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3078981846.index
+\music\src
+C:\Users\yzy\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3808385905.index
+\music\src
+C:\Users\yzy\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3049228153.index
+\work2\src
+C:\Users\yzy\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1023264633.index
+\work2\src
+C:\Users\yzy\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4203669443.index
+\music\src
+C:\Users\yzy\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4283761948.index
+\work2\src

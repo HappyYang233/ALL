@@ -1,0 +1,33 @@
+package 单人信息管理系统;
+import java.io.*;
+public class Operate {
+	private File file;
+	private InputData id;
+	private Serialiable ser;
+	public Operate() {
+		this.file= new File("./test8");
+		this.id=new InputData();
+	}
+	public void add() throws IOException
+	{
+		String name=this.id.getString("请输入姓名","请输入正确格式的姓名");
+		int age=this.id.getInt("请输入年龄", "请输入正确格式的年龄");
+		Person per= new Person(name,age);
+		ser.ser(per, file);
+		
+		
+	}
+	public void delect()
+	{
+		
+	}
+	public void change()
+	{
+		
+	}
+	public void load() throws Exception, IOException, Exception
+	{
+		Person per = (Person)ser.dser(file);
+		System.out.println(per);
+	}
+}

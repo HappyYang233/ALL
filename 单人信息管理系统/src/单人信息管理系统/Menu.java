@@ -1,0 +1,43 @@
+package 单人信息管理系统;
+import java.io.IOException;
+import java.util.*;
+
+public class Menu {
+
+	public Menu() throws Exception {
+		while(true)
+		{
+			this.show();
+			
+		}
+	}
+	public void show() throws Exception
+	{
+		System.out.println("欢迎进入系统");
+		System.out.println("添加用户请按一");
+		System.out.println("查找用户信息请按2");
+		System.out.println("删除用户请按3");
+		System.out.println("修改用户信息请按4");
+		InputData input = new InputData();
+		int i=input.getInt("请输入操作数","只能输入整肃");
+		Operate operate = new Operate();
+		switch (i) {
+		case 1 :
+			{operate.add();break;}
+		
+		case 2:
+			{operate.load();break;}
+		case 3:
+			{operate.delect();break;}
+		case 4:
+			{operate.change();break;}
+			default :
+			{
+				System.out.println("请选择正确参数");
+			}
+			
+				
+		
+	}
+}
+}

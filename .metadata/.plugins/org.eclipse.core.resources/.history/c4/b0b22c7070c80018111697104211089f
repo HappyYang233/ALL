@@ -1,0 +1,49 @@
+import java.io.*;
+import java.text.SimpleDateFormat;
+class Util{
+	private BufferedReader buf=null;
+	public Util() {
+		this.buf= new BufferedReader(new InputStreamReader(System.in));
+	}
+	public String getInfo(String info) throws Exception
+	{
+		String temp = null;
+		System.out.println(info);
+		temp=this.buf.readLine();
+		return temp;
+	}
+	public int getDate(String info,String err) throws Exception
+	{
+		int temp=0;
+		String str=null;
+		boolean flag= true;
+		while(flag)
+		{
+			str=this.getInfo(info);
+		if(str.matches("^\\d{4}-\\d{2}-\\d{2}$"))
+		{
+			SimpleDateFormat sdf= new SimpleDateFormat("YYYY-MM-DD");
+			sdf.parse(str);
+			
+			temp =Integer.parseInt(str);
+			flag = false;
+		}
+		else
+			
+			System.out.println(err);
+		}
+		return temp;
+			
+		
+	}
+
+}
+public class Demo3 {
+	public static void main(String[] args) throws Exception
+	{
+		Util util = new Util();
+		int i=util.getDate("请输入日期","输入错误请请重新输入");
+	
+		System.out.println("相加="+(i+j));
+	}
+}

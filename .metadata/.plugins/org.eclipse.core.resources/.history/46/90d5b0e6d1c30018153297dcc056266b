@@ -1,0 +1,12 @@
+package stduy;
+
+public class main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Person one = new Person();
+		System.out.println("sdasdasd");
+		System.out.println(one.getName());
+	}
+
+}

@@ -1,0 +1,23 @@
+package ·ºÐÍ;
+interface Info<T>{
+	public T getVar();
+}
+class InfoImpl<T> implements Info<T>{
+	private T var;
+	public InfoImpl(T var)
+	{
+		this.var=var;
+	}
+	public T getVar() {
+		return null;
+	}
+}
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		InfoImpl<String> i = new InfoImpl<String>("Ñî");
+		System.out.println(i.getVar());
+	}
+
+}

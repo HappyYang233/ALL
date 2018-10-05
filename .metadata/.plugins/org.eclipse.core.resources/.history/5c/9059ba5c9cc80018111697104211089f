@@ -1,0 +1,10 @@
+package 单人信息管理系统;
+
+public class Menu {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

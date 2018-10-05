@@ -1,0 +1,67 @@
+
+class Array{
+	private int[] array;
+	private int foot;
+	public Array(int len)
+	{
+		if(len>0)
+		this.array=new int[len];
+		else
+			this.array= new int[1];
+		
+	}
+	
+	public int[] getArray() {
+		return array;
+	}
+	public void setArray(int[] array) {
+		this.array = array;
+	}
+	public int getFoot() {
+		return foot;
+	}
+	public void setFoot(int foot) {
+		this.foot = foot;
+	}
+	public void add(int number)
+	{
+		this.array[foot]=number;
+		this.foot++;
+	}
+	
+	
+}
+class SortArray extends Array{
+	public SortArray(int len){
+		super(len);
+	}
+	public void sort()
+	{
+		java.util.Arrays.sort(this.getArray()); 
+	}
+	
+}
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*Array array = new Array(5);
+		array.add(5);
+		array.add(2);
+		array.add(2);
+		array.add(2);
+		array.add(2);
+		for(int i=0;i<array.getFoot();i++)
+		{
+			System.out.println(array.getArray()[i]);
+		}*/
+		SortArray sort= new SortArray(5);
+		sort.add(2);
+		sort.add(3);
+		sort.add(2);
+		sort.add(2);
+		sort.add(2);
+		
+	}
+
+}

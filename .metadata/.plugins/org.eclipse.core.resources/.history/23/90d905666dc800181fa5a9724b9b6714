@@ -1,0 +1,29 @@
+import java.io.*;
+class Util{
+	private BufferedReader buf=null;
+	public Util() {
+		this.buf= new BufferedReader(new InputStreamReader(System.in));
+	}
+	public String getInfo(String info) throws Exception
+	{
+		String temp = null;
+		System.out.println(info);
+		temp=this.buf.readLine();
+		return temp;
+	}
+	public int getInt(String info,String err) throws Exception
+	{
+		int temp=0;
+		String str=getInfo(info);
+		if(str.matches("^\\d+$"))
+			temp =Integer.parseInt(str);
+		else
+			System.out.println(err);
+		return temp;
+			
+		
+	}
+}
+public class Demo3 {
+
+}

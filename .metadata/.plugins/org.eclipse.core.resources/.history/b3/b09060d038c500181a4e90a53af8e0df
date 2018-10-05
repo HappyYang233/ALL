@@ -1,0 +1,41 @@
+
+class Array{
+	private int[] array;
+	private int foot;
+	public Array(int len)
+	{
+		if(len>0)
+		this.array=new int[len];
+		else
+			this.array= new int[1];
+		
+	}
+	
+	public int[] getArray() {
+		return array;
+	}
+	public void setArray(int[] array) {
+		this.array = array;
+	}
+	public int getFoot() {
+		return foot;
+	}
+	public void setFoot(int foot) {
+		this.foot = foot;
+	}
+	public void add(int number)
+	{
+		this.array[foot]=number;
+		this.foot++;
+	}
+	
+	
+}
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

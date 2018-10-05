@@ -1,0 +1,119 @@
+
+class Array{
+	private int[] array;
+	private int foot;
+	public Array(int len)
+	{
+		if(len>0)
+		this.array=new int[len];
+		else
+			this.array= new int[1];
+		
+	}
+	
+	public int[] getArray() {
+		return array;
+	}
+	public void setArray(int[] array) {
+		this.array = array;
+	}
+	public int getFoot() {
+		return foot;
+	}
+	public void setFoot(int foot) {
+		this.foot = foot;
+	}
+	public void add(int number)
+	{
+		if(this.foot<this.array.length)
+		{
+			this.array[foot]=number;
+			this.foot++;
+		}
+		else
+		{
+			System.out.println("数组已满，不能添加");
+		}
+	}
+	
+	
+}
+class SortArray extends Array{
+	private int i;
+
+	public int getI() {
+		return i;
+	}
+	public void setI(int i) {
+		this.i = i;
+	}
+	public SortArray(int len){
+		super(len);
+	}
+	public void sort()
+	{
+		this.i=0;
+		java.util.Arrays.sort(this.getArray()); 
+	}
+	
+}
+class ReArray extends Array{
+	public ReArray(int len)
+	{
+		super(len);
+	}
+	public void Re() {
+		
+		for(int i=0;i<(super.getArray().length)/2;i++)
+		{
+			int temp=super.getArray()[i];
+			super.getArray()[i]=super.getArray()[super.getArray().length-i-1];
+					super.getArray()[super.getArray().length-i-1]=temp;		
+		}
+		
+		
+ 	}
+}
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Array array = new Array(5);
+		array.add(5);
+		array.add(2);
+		array.add(2);
+		array.add(2);
+		array.add(2);
+		for(int i=0;i<array.getFoot();i++)
+		{
+			System.out.println(array.getArray()[i]);
+		}
+		SortArray sort= new SortArray(4);
+		sort.add(2);
+		sort.add(3);
+		sort.add(2);
+		sort.add(2);
+		sort.add(2);
+		sort.sort();
+		System.out.println(sort.getI());
+		for(int i=0;i<sort.getFoot();i++)
+		{
+			System.out.println(sort.getArray()[i]);
+		}
+		System.out.println("------------");
+		ReArray re= new ReArray(5);
+		re.add(2);
+		re.add(3);
+		re.add(2);
+		re.add(2);
+		re.add(2);
+		re.Re();
+		for(int i=0;i<re.getFoot();i++)
+		{
+			System.out.println(re.getArray()[i]);
+		}
+		
+		
+	}
+
+}

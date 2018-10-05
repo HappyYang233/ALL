@@ -1,0 +1,154 @@
+
+interface Pet{
+	public String getName();
+	public String getColor();
+	public int getAge();
+	
+}
+class Cat implements Pet{
+	private String name;
+	private String color;
+	private int age;
+	public Cat(String name,String color,int age)
+	{
+		this.name=name;
+		this.color=color;
+		this.age= age;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	
+}
+class Dog implements Pet{
+	private String name;
+	private String color;
+	private int age;
+	public Dog(String name,String color,int age)
+	{
+		this.name=name;
+		this.color=color;
+		this.age= age;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	
+}
+class PetShop{
+	private Pet[] petArray;
+	private int foot;
+	public PetShop(int len)
+	{
+		if(len>0)
+		this.petArray= new Pet[len];
+		else
+			this.petArray=new Pet[1];
+	}
+	public Pet[] getPetArray() {
+		return petArray;
+	}
+	public void setPetArray(Pet[] petArray) {
+		this.petArray = petArray;
+	}
+	public int getFoot() {
+		return foot;
+	}
+	public void setFoot(int foot) {
+		this.foot = foot;
+	}
+	public void addPet(Pet pet)
+	{
+		if(foot<this.petArray.length)
+		{
+			this.petArray[this.foot]=pet;
+			this.foot++;
+		}
+		else
+		{
+			System.out.println("无法添加已经满员");
+		}
+			
+	}
+	public Pet[] search(String keyword)
+	{
+		int count=0;
+		for(int i=0;i<this.petArray.length;i++)
+		{
+			if(this.petArray[i]!=null)
+			{
+				if(this.petArray[i].getName().indexOf(keyword)!=-1||this.petArray[i].getColor().indexOf(keyword)!=-1)
+				{
+				count++;
+				}
+			}
+		
+		}
+		Pet[] p = new Pet[count];
+		int flag=0;
+		for(int i=0;i<this.getPetArray().length;i++)
+		{
+			if(this.petArray[i]!=null)
+			{
+				if(this.petArray[i].getName().indexOf(keyword)!=-1||this.petArray[i].getColor().indexOf(keyword)!=-1)
+				{
+					p[flag]=this.petArray[i];
+					flag++;
+				}
+			}
+		}
+		return p;
+			
+	
+}
+
+}
+public class Main {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		PetShop ps= new PetShop(3);
+		Cat cat1= new Cat("1","白",5);
+		
+		ps.addPet(cat1);
+		ps.addPet(new Cat("2","黑",6));
+		ps.addPet(new Dog("狗","黑",2));
+		for(int i=0;i<ps.search("黑").length;i++)
+		{
+			System.out.println(ps.search("黑")[i].getName());
+		}
+	}
+
+}

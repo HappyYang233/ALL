@@ -1,0 +1,25 @@
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
+public class demo1 {
+	 public static void main(String[] args) throws Exception 
+	 {
+		 File f= new File("./test.txt");
+		InputStream in = null;
+		in=new FileInputStream(f);
+		String str= "hello\r\n";
+		byte[] b= new byte[1024];
+		
+		in.read(b);
+		
+		
+		in.close();
+		System.out.println(new String(b));
+	 }
+
+}

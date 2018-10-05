@@ -1,0 +1,116 @@
+package linkPlus;
+
+
+
+class Link{
+	
+	 class Node{
+		private String data;
+		public String getData() {
+			return data;
+		}
+		public void setData(String data) {
+			this.data = data;
+		}
+		public Node getNextNode() {
+			return nextNode;
+		}
+		public void setNextNode(Node nextNode) {
+			this.nextNode = nextNode;
+		}
+		private Node nextNode;
+		public Node(String data)
+		{
+			this.data=data;
+		}
+		public void add(Node newNode)
+		{
+			if(this.nextNode==null)
+			{
+				this.nextNode=newNode;
+				
+			}
+			else
+			{
+				this.nextNode.add(newNode);
+			}
+		}
+		public void print()
+		{
+			if(this.getNextNode()!=null)
+			{
+				System.out.println(this.data);
+				this.getNextNode().print();
+			}
+			else {
+				System.out.println(this.data);
+			}
+		}
+		public void search(String data)
+		{
+			if(!this.getData().equals(data))
+			{
+			this.getNextNode().search(data);
+			}
+			else {
+				System.out.println("存在"+data);;
+			}
+		}
+	};
+	private Node root;
+	public void contains(String data)
+	{
+
+		if(this.root.getData().equals(data))
+		{
+			System.out.println("存在"+data);
+		}
+		else
+		{
+			this.root.getNextNode().search(data);;
+		}
+	
+	}
+	public void addNode(String data)
+	{
+		Node newNode= new Node(data);
+		if(this.root==null)
+		{
+			this.root=newNode;
+		}
+		else
+		{
+			this.root.add(newNode);
+		}
+	}
+	public void printlink()
+	{
+		if(this.root!=null)
+		{
+			this.root.print();
+		}
+		else
+		{
+			System.out.println("链表为空");
+		
+		}
+	}
+	
+}
+
+public class Main {
+	public static void main(String[] args)
+	{
+		Link link = new Link();
+		link.addNode("a");
+		link.addNode("b");
+		link.addNode("c");
+		link.addNode("d");
+		link.addNode("e");
+		link.addNode("f");
+		link.printlink();
+		link.contains("a");
+		
+		
+	}
+}

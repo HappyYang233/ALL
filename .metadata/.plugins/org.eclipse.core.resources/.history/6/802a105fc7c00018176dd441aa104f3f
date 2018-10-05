@@ -1,0 +1,99 @@
+package wordcount;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+public class main {
+
+	public static void main(String[] args) throws IOException {
+		String str="";
+		List<String> operations = new ArrayList<String>();
+		List<String> files = new ArrayList<String>();
+		String outPutFile ="result.txt";
+		for(int i=0 ;i<args.length;i++)
+		{
+			if(args[i].startsWith("-"))
+			operations.add(args[i]);
+			else
+				files.add(args[i]);
+				
+		}
+		for(int i=0;i<operations.size();i++)
+        {
+            if(!operations.contains("-o"))
+            {
+                for (int j= 0; j < files.size(); j++) {
+                    switch (operations.get(i)) {
+                    case "-c":
+                        str+=" "+basicFunction.getCharNum(files.get(j));
+                        break;
+                    case "-l":
+                        str+=" "+basicFunction.getLineNum(files.get(j));
+                        break;
+                    case "-w":
+                        str+=" "+basicFunction.getWordNum(files.get(j));
+                        break;
+                    default:
+                        System.out.println("false");
+                        break;
+                    }
+                }
+                outputfile(str,outPutFile);
+              
+            }
+            else {
+                outPutFile=files.get(files.size()-1);
+                for (int j= 0; j< files.size()-1; j++) {
+                    switch (operations.get(i)) {
+                    case "-c":
+                        str+=" "+basicFunction.getCharNum(files.get(j));
+                        break;
+                    case "-l":
+                    	str+=" "+basicFunction.getLineNum(files.get(j));
+                        break;
+                    case "-w":
+                    	str+=" "+basicFunction.getWordNum(files.get(j));
+                        break;
+                    case "-o" : break;
+                    default:
+                        System.out.println("false");
+                        break;
+                    }
+                }
+                outputfile(str,outPutFile);
+            }
+        }
+		// basicFunction.output(str,outPutFile);
+    }
+	 public static void outputfile(String str,String outputfile) throws IOException
+	    {
+	        File file=new File(outputfile);
+	        File f = new File("./filename");
+	        if(!f.exists())
+	        {
+	        	f.createNewFile();
+	        }
+	        System.out.println(f.getPath());
+	        System.out.println(f.getAbsolutePath());
+	        System.out.println(f.getCanonicalPath());
+	        FileWriter fileWriter=new FileWriter(file);
+	        BufferedWriter bWriter=new BufferedWriter(fileWriter);
+	        bWriter.write(str);
+	        bWriter.close();
+	    }
+
+		
+		
+	
+	}
+	
+
+

@@ -1,0 +1,33 @@
+package ·ºÐÍ;
+class Info<T extends Number>
+{
+	private T var;
+
+	public T getVar() {
+		return var;
+	}
+
+	public void setVar(T var) {
+		this.var = var;
+	}
+	public String toString() {
+		return this.var.toString();
+	}
+	
+}
+public class Main2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 Info<Integer> info= fun(30);
+		 System.out.println(info.getVar());
+		 
+	}
+	
+	public static <T extends Number> Info<T> fun(T p)
+	{
+		Info<T> temp = new Info<T>();
+		temp.setVar(p);
+		return temp;
+	}
+}

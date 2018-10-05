@@ -1,0 +1,92 @@
+package linkPlus;
+
+
+
+class Link{
+	
+	 class Node{
+		private String data;
+		public String getData() {
+			return data;
+		}
+		public void setData(String data) {
+			this.data = data;
+		}
+		public Node getNextNode() {
+			return nextNode;
+		}
+		public void setNextNode(Node nextNode) {
+			this.nextNode = nextNode;
+		}
+		private Node nextNode;
+		public Node(String data)
+		{
+			this.data=data;
+		}
+		public void add(Node newNode)
+		{
+			if(this.nextNode==null)
+			{
+				this.nextNode=newNode;
+				
+			}
+			else
+			{
+				this.nextNode.add(newNode);
+			}
+		}
+		public void print()
+		{
+			if(this.getNextNode()!=null)
+			{
+				System.out.println(this.data);
+				this.getNextNode().print();
+			}
+			else {
+				System.out.println(this.data);
+			}
+		}
+	};
+	private Node root;
+	public void addNode(String data)
+	{
+		Node newNode= new Node(data);
+		if(this.root==null)
+		{
+			this.root=newNode;
+		}
+		else
+		{
+			this.root.add(newNode);
+		}
+	}
+	public void printlink()
+	{
+		if(this.root!=null)
+		{
+			this.root.print();
+		}
+		else
+		{
+			System.out.println("Á´±íÎª¿Õ");
+		
+		}
+	}
+	
+}
+
+public class Main {
+	public static void main(String[] args)
+	{
+		Link link = new Link();
+		link.addNode("a");
+		link.addNode("b");
+		link.addNode("c");
+		link.addNode("d");
+		link.addNode("e");
+		link.addNode("f");
+		link.printlink();
+		
+		
+	}
+}

@@ -1,0 +1,15 @@
+import java.io.File;
+import java.io.IOException;
+
+public class demo1 {
+	 public static void main(String[] args)
+	 {
+		 File f= new File("./");
+		 
+		File file[] =f.listFiles();
+		for(int i=0;i<file.length;i++)
+		{
+			System.out.println(file[i]);
+		}
+	 }
+}
